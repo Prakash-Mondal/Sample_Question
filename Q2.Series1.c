@@ -11,7 +11,7 @@ int main()
     {
         result = result + (pow(-1, (1 + i))) / factorial(2 + 2 * i);
     }
-    printf("%.16lf", result);
+    printf("Sn = %.16lf", result);
     return 0;
 }
 long unsigned int factorial(long unsigned int n)
