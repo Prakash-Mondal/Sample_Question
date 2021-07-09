@@ -129,14 +129,32 @@ int main()
         printf("\nSquare of resultant matrix is :\n");
         e = multiply_array(c, d, a_row, b_column, a_row, b_column);
         output_array(e, a_row, b_column);
-        temp = check_idempotent(e, c, a_row, b_column);
 
+        //Check idempotent or not..
+        temp = check_idempotent(e, c, a_row, b_column);
         if (temp == 1)
             printf("\nResultant matrix is not idempotent.\n");
         else
             printf("\nResultant matrix is idempotent.\n");
     }
+
     else
         printf("\nMatrix multiplication not possible.\n");
+
+    // Free the memory...
+    for (i = 0; i < 10; i++)
+    {
+        free(a[i]);
+        free(b[i]);
+        free(c[i]);
+        free(d[i]);
+        free(e[i]);
+    }
+    free(a);
+    free(b);
+    free(c);
+    free(d);
+    free(e);
+
     return 0;
 }
