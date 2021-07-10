@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Initialize the dynamic array
+//Initialize the dynamic array and taking input from user ....
 int **input_array(int a_row, int a_column)
 {
     int i, j;
@@ -122,7 +122,7 @@ int main()
             printf("\n");
         }
 
-        //Array c
+        //Array c , calculating the multiplication result ...
         printf("\nMultiplication result is :\n");
         c = multiply_array(a, b, a_row, a_column, b_row, b_column);
         d = output_array(c, a_row, b_column);
