@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 //creat maximum function...
-int maximum(int A[10][10], int i, int j, int column)
+int maximum(int A[10][10], int i, int j, int row)
 {
-    int max = A[i][1];
-    for (j = 1; j <= column; j++)
+    int max = A[1][j];
+    for (i = 1; i <= row; i++)
     {
         if (A[i][j] > max)
             max = A[i][j];
@@ -13,13 +13,13 @@ int maximum(int A[10][10], int i, int j, int column)
 }
 
 //creat minimum function...
-int minimum(int B[10], int i, int row)
+int minimum(int B[10], int j, int column)
 {
     int min = B[1];
-    for (i = 1; i <= row; i++)
+    for (j = 1; j <= column; j++)
     {
-        if (B[i] < min)
-            min = B[i];
+        if (B[j] < min)
+            min = B[j];
     }
     return min;
 }
@@ -45,13 +45,13 @@ int main()
         }
         printf("\n");
     }
-    //Calculate maximum element of each row...
-    for (i = 1; i <= row; i++)
+    //Calculate maximum element of each column...
+    for (j = 1; j <= column; j++)
     {
-        B[i] = maximum(A, i, j, column);
+        B[j] = maximum(A, i, j, row);
     }
     //Calculate minimum value of these maximum elements...
-    fA = minimum(B, i, row);
+    fA = minimum(B, j, column);
 
     printf("Value of the function f(A) = min { max Aij} is : %d", fA);
     return 0;
